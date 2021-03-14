@@ -1,0 +1,29 @@
+{
+  "name": "reviewly",
+  "version": "1.0.0",
+  "description": "A platform where users can sign up with their basic information and post reviews about apartments they've previously lived in",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/terieyenike/reviewly.git"
+  },
+  "keywords": [
+    "reviews",
+    "apartments",
+    "landlords",
+    "visitors",
+    "amenities"
+  ],
+  "author": "Teri Eyenike",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/terieyenike/reviewly/issues"
+  },
+  "homepage": "https://github.com/terieyenike/reviewly#readme",
+  "dependencies": {
+    "express": "4.17.1"
+  }
+}
