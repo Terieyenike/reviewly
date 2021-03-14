@@ -4,7 +4,8 @@
   "description": "A platform where users can sign up with their basic information and post reviews about apartments they've previously lived in",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node index.js",
+    "start:dev": "nodemon index.js"
   },
   "repository": {
     "type": "git",
@@ -24,6 +25,10 @@
   },
   "homepage": "https://github.com/terieyenike/reviewly#readme",
   "dependencies": {
-    "express": "4.17.1"
+    "bcrypt-nodejs": "0.0.3",
+    "cors": "2.8.5",
+    "express": "4.17.1",
+    "knex": "0.95.2",
+    "pg": "8.5.1"
   }
 }
