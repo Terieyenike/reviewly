@@ -1,11 +1,11 @@
 const Pool = require('pg').Pool;
 
 const db = new Pool({
-  port: 5432,
-  host: 'localhost',
-  user: 'teyenike',
-  password: '',
-  database: 'reviewly',
+  client: 'pg',
+  connection: {
+    connectString: process.env.DATABASE_URL,
+    ssl: true,
+  },
 });
 
 module.exports = db;
