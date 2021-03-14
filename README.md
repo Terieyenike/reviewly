@@ -92,3 +92,11 @@ Example
   "password": "nelson123"
 }
 ```
+
+#### Deployment
+
+Heroku
+
+#### Author
+
+Teri Eyenike
