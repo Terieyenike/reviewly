@@ -59,7 +59,7 @@ app.post('/signin', (req, res) => {
     db.query('SELECT email, hash FROM login WHERE email = $1', [email]).then(
       (data) => {
         const isValid = bcrypt.compareSync(password, data.rows[0].hash);
-        console.log(isValid);
+
         if (isValid) {
           return db
             .query('SELECT * FROM users WHERE email = $1', [email])
@@ -83,9 +83,9 @@ app.post('/reviews', async (req, res) => {
       name,
       email,
       apartment_lived_in,
-      landlords,
+      landlord,
       apartment_situated,
-      quality_of_apartment,
+      rating,
     } = req.body;
     if (!name || !email) {
       res
@@ -93,15 +93,8 @@ app.post('/reviews', async (req, res) => {
         .json('Please check your details. Input the right details');
     }
     const reviews = await db.query(
-      'insert into users (name, email, apartment_lived_in, landlords, apartment_situated, quality_of_apartment) values($1, $2, $3, $4, $5, $6) RETURNING *',
-      [
-        name,
-        email,
-        apartment_lived_in,
-        landlords,
-        apartment_situated,
-        quality_of_apartment,
-      ]
+      'insert into users (name, email, apartment_lived_in, landlord, apartment_situated, rating) values($1, $2, $3, $4, $5, $6) RETURNING *',
+      [name, email, apartment_lived_in, landlord, apartment_situated, rating]
     );
     res.json(reviews.rows[0]);
   } catch (error) {
